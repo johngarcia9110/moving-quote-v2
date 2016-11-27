@@ -1,0 +1,39 @@
+//output:../index.html
+
+extends layout.jade
+
+block content
+  .card-wrap
+    .card-header
+      span.is-active
+      span
+      span
+
+    .card-bodies
+      // Introduction card
+      .card-body.card-body-step-1.is-showing
+        .title Tech Moving Services Estimator
+        p.description There are many factors to consider when moving technology. This form will give you an estimate of what it will cost to have your tech packaged, moved and re-setup with Adam D Technology.
+          .text-center
+            .button Start
+      //Computer + monitors card
+      .card-body.card-body-step-2
+        .title Computers & Monitors
+        .description Each computer is moved as a whole unit. This includes One monitor, computer, keyboard and mouse.
+        form
+          label
+            input(type="number" name="computers")
+            | How many computers do you need to move?
+          label
+            input(type="radio" name="radio" id="radio2")
+            | Number of extra monitors to move
+          .text-center.fade-in
+            .button Next
+      //next card
+      .card-body.card-body-step-3
+        .title Step 3
+        .description Next step here
+        .text-center
+            .button Next
+    .text-center
+    .rerun-button Redo Form
