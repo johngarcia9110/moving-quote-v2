@@ -3,39 +3,103 @@
 extends layout.jade
 
 block content
+  .header
+    .logo
+      h1 Adam D Technology
   .card-wrap
-    .card-header
-      span.is-active
-      span
-      span
-
     .card-bodies
       // Introduction card
       .card-body.card-body-step-1.is-showing
         .title Tech Moving Services Estimator
         p.description There are many factors to consider when moving technology. This form will give you an estimate of what it will cost to have your tech packaged, moved and re-setup with Adam D Technology.
-          .text-center
+          .text-center.controls
             .button.button-next Start
+
       //Computer + monitors card
+
       .card-body.card-body-step-2
         .title Computers & Monitors
         .description Each computer is moved as a whole unit. This includes One monitor, computer, keyboard and mouse.
         form
           label
-            input(type="number" name="computers")
-            | How many computers do you need to move?
+            | Number of computers to move?
+            input.field(type="number" name="computers" pattern="\d*" value='0')
           label
-            input(type="radio" name="radio" id="radio2")
-            | Number of extra monitors to move
-          .text-center.fade-in
+            | Number of extra monitors?
+            input.field(type="number" name="monitors" pattern="\d*" value='0')
+          .text-center.fade-in.controls
             .button.button-last Previous
             .button.button-next Next
-      //next card
+
+      //Printers Card
+
       .card-body.card-body-step-3
-        .title Step 3
-        .description Next step here
-        .text-center
-          .button.button-last Previous
-          .button.button-next Next
+        .title Printers
+        .description Please tell us how many of each type of printer below you need to move.
+        form
+          label
+            | Number of basic printers you need to move?
+            input.field(type="number" name="BasicPrinters" pattern="\d*" value='0')
+          label
+            | Number of MFP's you need to move
+            input.field(type="number" name="MFPs" pattern="\d*" value='0')
+          .text-center.fade-in.controls
+            .button.button-last Previous
+            .button.button-next Next
+
+      //Tv Card
+
+      .card-body.card-body-step-4
+        .title TV's
+        .description Prices to move Tv's varies by size. Please tell us how many of each size you need to move. If you have no tv's to move, please click "next".
+        form
+          label
+            | Number of Tv's less than 50"
+            input.field(type="number" name="tv50" pattern="\d*" value='0')
+          label
+            | Number of Tv's between than 51" - 69"
+            input.field(type="number" name="tv5169" pattern="\d*" value='0')
+          label
+            | Number of Tv's greater than 70"
+            input.field(type="number" name="tv70" pattern="\d*" value='0')
+          .text-center.fade-in.controls
+            .button.button-last Previous
+            .button.button-next Next
+
+      //Server & Network Equiptment Card
+
+      .card-body.card-body-step-5
+        .title TV's
+        .description Each server and network set up is different and there are many variables to consider. In order to get more accurate pricing, please talk to an Adam D Technology Advisor.
+        form
+          label
+            | Number Servers to move:
+            input.field(type="number" name="server" pattern="\d*" value='0')
+          label
+            | Do you have network equiptment to move?
+            select.field(name="network")
+              option(value='161.50') Yes
+              option(value='0') No
+          .text-center.fade-in.controls
+            .button.button-last Previous
+            .button.button-next#submit Get Estimate
+
+      //End Card
+
+      .card-body.card-body-step-6
+        .title Total Estimate Price:
+        .description
+          #price $00.00
+        .text-center.controls
+          .button.button-last Go Back
+          .button.button-next Talk To An Advisor
+
     .text-center
       .button.rerun-button Redo Form
+  .footer
+    span.is-active
+    span
+    span
+    span
+    span
+    span

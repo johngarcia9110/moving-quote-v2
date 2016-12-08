@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Get an estimate of the moving cost for all your technology."/>
     <meta name="author" content="John Garcia"/>
-    <link rel="icon" href="../../favicon.ico"/>
     <title>Adam D Technology Moving Calculator</title>
     <link href="css/style.css" rel="stylesheet"/>
   </head>
   <body>
+    <div class="header">
+      <div class="logo">
+        <h1>Adam D Technology</h1>
+      </div>
+    </div>
     <div class="card-wrap">
-      <div class="card-header"><span class="is-active"></span><span></span><span></span></div>
       <div class="card-bodies">
         <!-- Introduction card-->
         <div class="card-body card-body-step-1 is-showing">
           <div class="title">Tech Moving Services Estimator</div>
           <p class="description">There are many factors to consider when moving technology. This form will give you an estimate of what it will cost to have your tech packaged, moved and re-setup with Adam D Technology.
-            <div class="text-center">
+            <div class="text-center controls">
               <div class="button button-next">Start</div>
             </div>
           </p>
@@ -28,25 +31,84 @@
           <div class="title">Computers & Monitors</div>
           <div class="description">Each computer is moved as a whole unit. This includes One monitor, computer, keyboard and mouse.</div>
           <form>
-            <label>
-              <input type="number" name="computers"/>How many computers do you need to move?
+            <label>Number of computers to move?
+              <input type="number" name="computers" pattern="d*" value="0" class="field"/>
             </label>
-            <label>
-              <input type="radio" name="radio" id="radio2"/>Number of extra monitors to move
+            <label>Number of extra monitors?
+              <input type="number" name="monitors" pattern="d*" value="0" class="field"/>
             </label>
-            <div class="text-center fade-in">
+            <div class="text-center fade-in controls">
               <div class="button button-last">Previous</div>
               <div class="button button-next">Next</div>
             </div>
           </form>
         </div>
-        <!--next card-->
+        <!--Printers Card-->
         <div class="card-body card-body-step-3">
-          <div class="title">Step 3</div>
-          <div class="description">Next step here</div>
-          <div class="text-center">
-            <div class="button button-last">Previous</div>
-            <div class="button button-next">Next</div>
+          <div class="title">Printers</div>
+          <div class="description">Please tell us how many of each type of printer below you need to move.</div>
+          <form>
+            <label>Number of basic printers you need to move?
+              <input type="number" name="BasicPrinters" pattern="d*" value="0" class="field"/>
+            </label>
+            <label>Number of MFP's you need to move
+              <input type="number" name="MFPs" pattern="d*" value="0" class="field"/>
+            </label>
+            <div class="text-center fade-in controls">
+              <div class="button button-last">Previous</div>
+              <div class="button button-next">Next</div>
+            </div>
+          </form>
+        </div>
+        <!--Tv Card-->
+        <div class="card-body card-body-step-4">
+          <div class="title">TV's</div>
+          <div class="description">Prices to move Tv's varies by size. Please tell us how many of each size you need to move. If you have no tv's to move, please click "next".</div>
+          <form>
+            <label>Number of Tv's less than 50"
+              <input type="number" name="tv50" pattern="d*" value="0" class="field"/>
+            </label>
+            <label>Number of Tv's between than 51" - 69"
+              <input type="number" name="tv5169" pattern="d*" value="0" class="field"/>
+            </label>
+            <label>Number of Tv's greater than 70"
+              <input type="number" name="tv70" pattern="d*" value="0" class="field"/>
+            </label>
+            <div class="text-center fade-in controls">
+              <div class="button button-last">Previous</div>
+              <div class="button button-next">Next</div>
+            </div>
+          </form>
+        </div>
+        <!--Server & Network Equiptment Card-->
+        <div class="card-body card-body-step-5">
+          <div class="title">TV's</div>
+          <div class="description">Each server and network set up is different and there are many variables to consider. In order to get more accurate pricing, please talk to an Adam D Technology Advisor.</div>
+          <form>
+            <label>Number Servers to move:
+              <input type="number" name="server" pattern="d*" value="0" class="field"/>
+            </label>
+            <label>Do you have network equiptment to move?
+              <select name="network" class="field">
+                <option value="161.50">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </label>
+            <div class="text-center fade-in controls">
+              <div class="button button-last">Previous</div>
+              <div id="submit" class="button button-next">Get Estimate</div>
+            </div>
+          </form>
+        </div>
+        <!--End Card-->
+        <div class="card-body card-body-step-6">
+          <div class="title">Total Estimate Price:</div>
+          <div class="description">
+            <div id="price">$00.00</div>
+          </div>
+          <div class="text-center controls">
+            <div class="button button-last">Go Back</div>
+            <div class="button button-next">Talk To An Advisor</div>
           </div>
         </div>
       </div>
@@ -54,6 +116,7 @@
         <div class="button rerun-button">Redo Form</div>
       </div>
     </div>
+    <div class="footer"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span></div>
     <!-- scripts-->
     <script src="js/form.js"></script>
     <script src="js/animations.js"></script>
