@@ -24,6 +24,11 @@ body {
   margin-bottom: 30px;
 }
 
+#price {
+  color: green;
+  font-size: 50px;
+}
+
 input[type="text"],
 input[type="email"] {
   padding: 10px 20px;
@@ -238,6 +243,7 @@ label:last-child {
   max-width: 400px;
   margin: auto;
   position: relative;
+  transform: translateY(-315px);
 }
 
 .modal .modal-body .close {
@@ -256,4 +262,17 @@ label:last-child {
 
 .show {
   display: block;
+}
+
+.modal-slide {
+  animation: modal-slideIn 1s forwards;
+}
+
+@keyframes modal-slideIn {
+  0% {
+    transform: translateY(-315px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

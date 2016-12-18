@@ -52,8 +52,10 @@ var getCard = function(direction){
 
 var showModal = function(){
   document.getElementById('modal').classList.add('show');
+  document.getElementsByClassName('modal-body')[0].classList.add('modal-slide');
 }
 
 var hideModal = function(){
   document.getElementById('modal').classList.remove('show');
+  document.getElementsByClassName('modal-body')[0].classList.remove('modal-slide');
 }
