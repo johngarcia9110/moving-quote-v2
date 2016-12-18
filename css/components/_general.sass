@@ -7,6 +7,8 @@ html
   min-height: 100%
   font-family: 'Roboto', sans-serif
 
+body
+  overflow: hidden
 
 .title
   text-transform: uppercase
@@ -71,6 +73,8 @@ label
   letter-spacing: 1px
   display: inline-block
   cursor: pointer
+  border: none
+  margin-bottom: 20px
 
   &:hover
     background: lighten($blue, 5%)
@@ -93,13 +97,16 @@ label
 
 .card-wrap
   max-width: 600px
-  margin: 50px auto
+  margin: 0px auto 50px auto
   transition: transform 300ms ease-in-out
 
 .header
   display: block
   text-align: center
+  .logo
+    padding: 5px
   h1
+    padding: 0
     color: white
 .footer
   height: 45px
@@ -117,6 +124,16 @@ label
     &.is-active
       background: rgba(0,0,0,0.4)
       background: $lightBlue
+
+  .share-buttons
+    .lead
+      color: white
+
+    .fa
+      margin: 10px
+      text-decoration: none
+      color: white
+      font-size: 20px
 
 .card-bodies
   position: relative
@@ -150,11 +167,12 @@ label
 
 @keyframes out
   0%
-    transform: translateY(0px) rotate(0deg)
-  60%
-    transform: rotate(60deg)
+    transform: rotateX(0deg)
+    opacity: 1
   100%
-    transform: translateY(800px) rotate(10deg)
+    transform: rotateX(90deg)
+    opacity: 0
+
 
 
 @keyframes in
